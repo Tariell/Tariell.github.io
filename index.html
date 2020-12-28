@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Киберспорт R6S</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Киберспотривные турниры по игре Rainbow 6 Siege"/>
+		<meta name="Keywords" content="игры, шутеры, киберспорт, турниры, games, shooters, rainbow six, rainbow 6 siege, rainbow six siege, cybersport"> 
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/mycss.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+                <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width">
+	</head>
+
+	<body>
+		<div class="container">
+
+			<div class="header-back">
+				<img class="responsive-img" src="img/mainimg.png" alt="Main image">
+				<div class="title-header">
+					Турниры по Rainbow 6 Siege
+				</div>
+				<div class="navigation-menu">
+					<a href="#proj" class="nav-element">Главное</a>
+					<a href="#sched" class="nav-element">мероприятия</a>
+					<a href="#ab" class="nav-element">место проведения</a>
+					<a href="#them" class="nav-element">отзывы и пожелания</a>
+				</div>
+			</div>	
+		</div>
+		<div class="title-proj" id="proj">
+			Главное
+		</div>
+		<div class="sim-slider" id = "slider">
+			  <ul class="sim-slider-list">
+			    <li><img src="img/slider1.png" alt="screen"></li>
+			    <li class="sim-slider-element"><img  src="img/slider1.png" alt="1"></li>
+			    <li class="sim-slider-element"><img  src="img/slider2.png" alt="2"></li>
+			    <li class="sim-slider-element"><img  src="img/slider33.png" alt="3"></li>
+			    <li class="sim-slider-element"><img  src="img/slider4.png" alt="4"></li>
+			    <li class="sim-slider-element"><img  src="img/slider5.png" alt="5"></li>
+			  </ul>
+			  <div class="sim-slider-arrow-left"></div>
+			  <div class="sim-slider-arrow-right"></div>
+			  <div class="sim-slider-dots"></div>
+		</div>
+
+		<div class="schedule" id="sched">
+			<div class="schedule-title">
+				Ближайшие мероприятия
+			</div>
+			<div class="schedule-content">
+				<div class="schedule-text">
+					<div class="text-element">
+						- 1/8 отборочных соревнований (8 декабря)
+					</div>
+					<div class="text-element">
+						- Интервью с капитаном команды EMPIRE (12 декабря)
+					</div>
+				</div>
+
+				<div class="schedule-calendar">
+					<form>
+						<input type="Date" name="calendar">
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="about" id="ab">
+			<div class="about-title">
+				Место проведения
+			</div>
+			<div class="about-content">
+				<div class="about-map">
+					<div class="mapouter">
+						<div class="gmap_canvas">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9118.193789303545!2d61.377200749918785!3d55.15618018636709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c592bf621c12ff%3A0x1c9a71ba8ce48609!2z0K7QttC90L4t0KPRgNCw0LvRjNGB0LrQuNC5INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90YvQuSDRg9C90LjQstC10YDRgdC40YLQtdGC!5e0!3m2!1sru!2sru!4v1609084755096!5m2!1sru!2sru" width="400" height="300" frameborder="0" style="border-width:1px" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="themes-form" id="them">
+			<div class="title-form">
+				Отзывы и пожелания
+			</div>
+			<div class="form-block">
+				<div class="title-theme">
+					Тема письма
+				</div>
+				<textarea class="theme" name="theme" rows="3" cols="70">
+
+				</textarea>
+				<div class="title-desc">
+					Текст письма
+				</div>
+				<textarea class="desc" name="desc" rows="14" cols="70">
+
+				</textarea>
+				<input class="btn" type="submit" name="sub" value="Отправить">
+			</div>
+		</div>
+
+
+		<div class="footer">
+			<div class="text-footer">
+				Rainbow 6 Plays
+			</div>
+			<div class=" logos-footer">
+				<a href="" class="logo"><img src="img/twitter.png" alt="twitter logo"></a>
+				<a href="" class="logo"><img src="img/instagram.png" alt="instagramm logo"></a>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function Sim(sldrId) {
+
+				let id = document.getElementById(sldrId);
+				if(id) {
+					this.sldrRoot = id
+				}
+				else {
+					this.sldrRoot = document.querySelector('.sim-slider')
+				};
+
+				// Carousel objects
+				this.sldrList = this.sldrRoot.querySelector('.sim-slider-list');
+				this.sldrElements = this.sldrList.querySelectorAll('.sim-slider-element');
+				this.sldrElemFirst = this.sldrList.querySelector('.sim-slider-element');
+				this.leftArrow = this.sldrRoot.querySelector('div.sim-slider-arrow-left');
+				this.rightArrow = this.sldrRoot.querySelector('div.sim-slider-arrow-right');
+				this.indicatorDots = this.sldrRoot.querySelector('div.sim-slider-dots');
+
+				// Initialization
+				this.options = Sim.defaults;
+				Sim.initialize(this)
+			};
+
+			Sim.defaults = {
+
+				// Default options for the carousel
+				loop: true,     
+				auto: true,     
+				interval: 3000, 
+				arrows: true,   
+				dots: true      
+			};
+
+			Sim.prototype.elemPrev = function(num) {
+				num = num || 1;
+
+				let prevElement = this.currentElement;
+				this.currentElement -= num;
+				if(this.currentElement < 0) this.currentElement = this.elemCount-1;
+
+				if(!this.options.loop) {
+					if(this.currentElement == 0) {
+						this.leftArrow.style.display = 'none'
+					};
+					this.rightArrow.style.display = 'block'
+				};
+				
+				this.sldrElements[this.currentElement].style.opacity = '1';
+				this.sldrElements[prevElement].style.opacity = '0';
+
+				if(this.options.dots) {
+					this.dotOn(prevElement); this.dotOff(this.currentElement)
+				}
+			};
+
+			Sim.prototype.elemNext = function(num) {
+				num = num || 1;
+				
+				let prevElement = this.currentElement;
+				this.currentElement += num;
+				if(this.currentElement >= this.elemCount) this.currentElement = 0;
+
+				if(!this.options.loop) {
+					if(this.currentElement == this.elemCount-1) {
+						this.rightArrow.style.display = 'none'
+					};
+					this.leftArrow.style.display = 'block'
+				};
+
+				this.sldrElements[this.currentElement].style.opacity = '1';
+				this.sldrElements[prevElement].style.opacity = '0';
+
+				if(this.options.dots) {
+					this.dotOn(prevElement); this.dotOff(this.currentElement)
+				}
+			};
+
+			Sim.prototype.dotOn = function(num) {
+				this.indicatorDotsAll[num].style.cssText = 'background-color:#C4C4C4; cursor:pointer;'
+			};
+
+			Sim.prototype.dotOff = function(num) {
+				this.indicatorDotsAll[num].style.cssText = 'background-color:#AC7878; cursor:default;'
+			};
+
+			Sim.initialize = function(that) {
+
+				// Constants
+				that.elemCount = that.sldrElements.length; // Количество элементов
+
+				// Variables
+				that.currentElement = 0;
+				let bgTime = getTime();
+
+				// Functions
+				function getTime() {
+					return new Date().getTime();
+				};
+				function setAutoScroll() {
+					that.autoScroll = setInterval(function() {
+						let fnTime = getTime();
+						if(fnTime - bgTime + 10 > that.options.interval) {
+							bgTime = fnTime; that.elemNext()
+						}
+					}, that.options.interval)
+				};
+
+				// Start initialization
+				if(that.elemCount <= 1) {   // Отключить навигацию
+					that.options.auto = false; that.options.arrows = false; that.options.dots = false;
+					that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
+				};
+				if(that.elemCount >= 1) {   // показать первый элемент
+					that.sldrElemFirst.style.opacity = '1';
+				};
+
+				if(!that.options.loop) {
+					that.leftArrow.style.display = 'none';  // отключить левую стрелку
+					that.options.auto = false; // отключить автопркрутку
+				}
+				else if(that.options.auto) {   // инициализация автопрокруки
+					setAutoScroll();
+					// Остановка прокрутки при наведении мыши на элемент
+					that.sldrList.addEventListener('mouseenter', function() {clearInterval(that.autoScroll)}, false);
+					that.sldrList.addEventListener('mouseleave', setAutoScroll, false)
+				};
+
+				if(that.options.arrows) {  // инициализация стрелок
+					that.leftArrow.addEventListener('click', function() {
+						let fnTime = getTime();
+						if(fnTime - bgTime > 1000) {
+							bgTime = fnTime; that.elemPrev()
+						}
+					}, false);
+					that.rightArrow.addEventListener('click', function() {
+						let fnTime = getTime();
+						if(fnTime - bgTime > 1000) {
+							bgTime = fnTime; that.elemNext()
+						}
+					}, false)
+				}
+				else {
+					that.leftArrow.style.display = 'none'; that.rightArrow.style.display = 'none'
+				};
+
+				if(that.options.dots) {  // инициализация индикаторных точек
+					let sum = '', diffNum;
+					for(let i=0; i<that.elemCount; i++) {
+						sum += '<span class="sim-dot"></span>'
+					};
+					that.indicatorDots.innerHTML = sum;
+					that.indicatorDotsAll = that.sldrRoot.querySelectorAll('span.sim-dot');
+					// Назначаем точкам обработчик события 'click'
+					for(let n=0; n<that.elemCount; n++) {
+						that.indicatorDotsAll[n].addEventListener('click', function() {
+							diffNum = Math.abs(n - that.currentElement);
+							if(n < that.currentElement) {
+								bgTime = getTime(); that.elemPrev(diffNum)
+							}
+							else if(n > that.currentElement) {
+								bgTime = getTime(); that.elemNext(diffNum)
+							}
+							// Если n == that.currentElement ничего не делаем
+						}, false)
+					};
+					that.dotOff(0);  // точка[0] выключена, остальные включены
+					for(let i=1; i<that.elemCount; i++) {
+						that.dotOn(i)
+					}
+				}
+			};
+
+			new Sim();
+		</script>
+		<script>new Sim("slider");</script>
+	</body>
+
+</html>
